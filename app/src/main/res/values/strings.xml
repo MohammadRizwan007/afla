@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">afla</string>
+
+    <string name="internet_message">No Internet Connection</string>
+    <string name="undo">Reconnect</string>
+</resources>

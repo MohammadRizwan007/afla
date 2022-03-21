@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "779716197153",
+    "project_id": "afla-4fda1",
+    "storage_bucket": "afla-4fda1.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:779716197153:android:5e5e4b5082760492e85c60",
+        "android_client_info": {
+          "package_name": "com.android.afla"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "779716197153-4c79ldutbq4sqeg37af38hhd98odupbk.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCXjXbo22HglyKtmQWTa_ltf3_E5eBiVx4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "779716197153-4c79ldutbq4sqeg37af38hhd98odupbk.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
