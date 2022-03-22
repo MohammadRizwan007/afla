@@ -132,6 +132,7 @@ public class LoginActivity extends AppCompatActivity {
         btnLogin.setEnabled(false);
         if (Email.equals("anonymous@afla.com") && Password.equals("Anonymous@125")){
             Intent loginIntent = new Intent(LoginActivity.this, DashboardSuperAdmin.class);
+            loginIntent.putExtra("UserName","Anonymous");
             Toast.makeText(LoginActivity.this, "login Successfully", Toast.LENGTH_SHORT).show();
             startActivity(loginIntent);
         }else {

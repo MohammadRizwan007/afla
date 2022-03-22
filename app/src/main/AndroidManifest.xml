@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Afla">
         <activity
+            android:name=".UI.SuperAdmin.CreateAdmin"
+            android:exported="false" />
+        <activity
             android:name=".UI.SuperAdmin.DashboardSuperAdmin"
             android:exported="true" />
         <activity
