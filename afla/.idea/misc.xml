@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/AndroidStudioProjects/afla/app/src/main/res/drawable-v24/background_edit_text_view.xml" value="0.14635416666666667" />
+        <entry key="..\:/AndroidStudioProjects/afla/app/src/main/res/drawable-v24/backgroundeditview.xml" value="0.14635416666666667" />
+        <entry key="..\:/AndroidStudioProjects/afla/app/src/main/res/drawable-v24/btn_gradient.xml" value="0.25625" />
+        <entry key="..\:/AndroidStudioProjects/afla/app/src/main/res/drawable-v24/ic_baseline_email_24.xml" value="0.14635416666666667" />
+        <entry key="..\:/AndroidStudioProjects/afla/app/src/main/res/drawable-v24/ic_baseline_lock_24.xml" value="0.14635416666666667" />
+        <entry key="..\:/AndroidStudioProjects/afla/app/src/main/res/drawable-v24/ic_baseline_phone_24.xml" value="0.14635416666666667" />
+        <entry key="..\:/AndroidStudioProjects/afla/app/src/main/res/drawable-v24/ic_baseline_username_24.xml" value="0.14635416666666667" />
+        <entry key="..\:/AndroidStudioProjects/afla/app/src/main/res/drawable/edit_text_background.xml" value="0.14635416666666667" />
+        <entry key="..\:/AndroidStudioProjects/afla/app/src/main/res/layout/activity_dashboard_super_admin.xml" value="0.25416666666666665" />
+        <entry key="..\:/AndroidStudioProjects/afla/app/src/main/res/layout/activity_login.xml" value="0.25416666666666665" />
+        <entry key="..\:/AndroidStudioProjects/afla/app/src/main/res/layout/activity_sign_up.xml" value="0.25416666666666665" />
+        <entry key="..\:/AndroidStudioProjects/afla/app/src/main/res/layout/activity_splash.xml" value="0.25416666666666665" />
+        <entry key="..\:/Studio Projects/afla-main/app/src/main/res/layout/activity_dashboard_admin.xml" value="0.23854166666666668" />
+        <entry key="..\:/Studio Projects/afla-main/app/src/main/res/layout/activity_dashboard_super_admin.xml" value="0.23854166666666668" />
+        <entry key="..\:/Studio Projects/afla-main/app/src/main/res/layout/activity_dashboard_user.xml" value="0.2" />
+        <entry key="..\:/Studio Projects/afla-main/app/src/main/res/layout/activity_login.xml" value="0.25416666666666665" />
+        <entry key="..\:/Studio Projects/afla-main/app/src/main/res/layout/activity_splash.xml" value="0.23854166666666668" />
+        <entry key="..\:/Users/RIZWAN/StudioProjects/afla/app/src/main/res/layout/activity_create_admin.xml" value="0.1390625" />
+        <entry key="..\:/Users/RIZWAN/StudioProjects/afla/app/src/main/res/layout/activity_dashboard_super_admin.xml" value="0.1390625" />
+        <entry key="..\:/Users/RIZWAN/StudioProjects/afla/app/src/main/res/layout/activity_login.xml" value="0.1390625" />
+        <entry key="..\:/Users/RIZWAN/StudioProjects/afla/app/src/main/res/layout/activity_sign_up.xml" value="0.1390625" />
+        <entry key="..\:/Users/USER/StudioProjects/afla/app/src/main/res/drawable/ic_baseline_search_24.xml" value="0.2703125" />
+        <entry key="..\:/Users/USER/StudioProjects/afla/app/src/main/res/layout/activity_create_admin.xml" value="0.1408514492753623" />
+        <entry key="..\:/Users/USER/StudioProjects/afla/app/src/main/res/layout/activity_dashboard_admin.xml" value="0.1" />
+        <entry key="..\:/Users/USER/StudioProjects/afla/app/src/main/res/layout/activity_dashboard_user.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/USER/StudioProjects/afla/app/src/main/res/layout/activity_login.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/USER/StudioProjects/afla/app/src/main/res/layout/activity_sign_up.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/USER/StudioProjects/afla/app/src/main/res/menu/menu.xml" value="0.25416666666666665" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>

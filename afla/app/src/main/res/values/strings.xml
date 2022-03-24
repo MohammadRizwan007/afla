@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">afla</string>
+
+    <string name="internet_message">No Internet Connection</string>
+    <string name="undo">Reconnect</string>
+
+<!--    <string name="default_web_client_id">779716197153-4c79ldutbq4sqeg37af38hhd98odupbk.apps.googleusercontent.com</string>-->
+</resources>
