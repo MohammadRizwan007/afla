@@ -18,6 +18,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.android.afla.R;
+import com.android.afla.UI.SuperAdmin.CreateAdmin;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -35,11 +36,15 @@ import java.util.regex.Pattern;
 public class SignUpActivity extends AppCompatActivity {
     public static final String TAG = "TAG";
     private FirebaseFirestore fStore;
-    private String userID;
     private EditText userName, Password, Email, Phone;
     private FirebaseAuth fAuth;
     private Button register;
     private TextView passStat, txt_login;
+
+    String email;
+    String password;
+    String fullName;
+    String number;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -92,9 +97,9 @@ public class SignUpActivity extends AppCompatActivity {
 //                    register.setEnabled(true);
 //                }
                 else {
-                    Toast.makeText(SignUpActivity.this, "Will Be Available Soon, Wait !!", Toast.LENGTH_SHORT).show();
-//                    Toast.makeText(SignUpActivity.this, "Please, Wait !!", Toast.LENGTH_SHORT).show();
-//                    saveData();
+//                    Toast.makeText(SignUpActivity.this, "Will Be Available Soon, Wait !!", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(SignUpActivity.this, "Please, Wait !!", Toast.LENGTH_SHORT).show();
+                    saveData();
                 }
             }
 
@@ -149,10 +154,10 @@ public class SignUpActivity extends AppCompatActivity {
     }
 
     public void saveData() {
-        final String email = Email.getText().toString().trim();
-        final String password = Password.getText().toString().trim();
-        final String fullName = userName.getText().toString();
-        final String number = Phone.getText().toString();
+         email = Email.getText().toString().trim();
+         password = Password.getText().toString().trim();
+         fullName = userName.getText().toString();
+         number = Phone.getText().toString();
 
         fAuth.createUserWithEmailAndPassword(email, password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
             @Override
@@ -166,40 +171,42 @@ public class SignUpActivity extends AppCompatActivity {
                         public void onComplete(@NonNull Task<Void> task) {
                             if (task.isSuccessful()) {
                                 Toast.makeText(SignUpActivity.this, "Verification Link send to your Gmail", Toast.LENGTH_SHORT).show();
+                                SaveRecords();
 
                             } else
                                 Toast.makeText(SignUpActivity.this, "Failed to send verification Try again", Toast.LENGTH_SHORT).show();
                         }
                     });
 
-                    userID = fAuth.getCurrentUser().getUid();
-                    DocumentReference documentReference = fStore.collection("users").document(userID);
-                    Map<String, Object> user = new HashMap<>();
-                    user.put("Name", fullName);
-                    user.put("email", email);
-                    user.put("phone", number);
-                    user.put("password", password);
-                    documentReference.set(user).addOnSuccessListener(new OnSuccessListener<Void>() {
-                        @Override
-                        public void onSuccess(Void aVoid) {
-                            Log.e(TAG, "onSuccess: user Profile is created for " + userID);
-                        }
-                    }).addOnFailureListener(new OnFailureListener() {
-                        @Override
-                        public void onFailure(@NonNull Exception e) {
-                            Log.e(TAG, "onFailure: " + e.toString());
-                        }
-                    });
-
-                    Intent loginIntent = new Intent(SignUpActivity.this, LoginActivity.class);
-                    startActivity(loginIntent);
 
                 } else {
-                    Toast.makeText(SignUpActivity.this, "Error ! " + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
+                    Toast.makeText(SignUpActivity.this, "Some Error Occurred ! Please Try Again Later  ! " + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
                     register.setEnabled(true);
                 }
             }
 
+        });
+
+    }
+
+    private void SaveRecords() {
+        Map<String, Object> user = new HashMap<>();
+        user.put("Email", email);
+        user.put("Password", password);
+        user.put("UserType", "2"); // Normal Users
+        DocumentReference documentReference = fStore.collection("user").document(email.trim().toLowerCase());
+        documentReference.set(user).addOnSuccessListener(new OnSuccessListener<Void>() {
+            @Override
+            public void onSuccess(Void aVoid) {
+                Intent loginIntent = new Intent(SignUpActivity.this, LoginActivity.class);
+                startActivity(loginIntent);
+            }
+        }).addOnFailureListener(new OnFailureListener() {
+            @Override
+            public void onFailure(@NonNull Exception e) {
+                Toast.makeText(SignUpActivity.this, "Some Error Occurred! Please Try Again Later", Toast.LENGTH_SHORT).show();
+//                Log.e(TAG, "onFailure: " + e.toString());
+            }
         });
 
     }

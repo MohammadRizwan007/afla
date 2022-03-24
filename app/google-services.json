@@ -1,33 +1,42 @@
 {
   "project_info": {
-    "project_number": "779716197153",
-    "project_id": "afla-4fda1",
-    "storage_bucket": "afla-4fda1.appspot.com"
+    "project_number": "451012409384",
+    "firebase_url": "https://afla-reward-49dd8-default-rtdb.firebaseio.com",
+    "project_id": "afla-reward-49dd8",
+    "storage_bucket": "afla-reward-49dd8.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:779716197153:android:5e5e4b5082760492e85c60",
+        "mobilesdk_app_id": "1:451012409384:android:48deb19ba40147e2605d1d",
         "android_client_info": {
           "package_name": "com.android.afla"
         }
       },
       "oauth_client": [
         {
-          "client_id": "779716197153-4c79ldutbq4sqeg37af38hhd98odupbk.apps.googleusercontent.com",
+          "client_id": "451012409384-2e5c401pv048bqluf1p8ie8dh8hn2v13.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.android.afla",
+            "certificate_hash": "60355fdc6b1377accc92ddc99b3f449f3b6ed2e5"
+          }
+        },
+        {
+          "client_id": "451012409384-sjtbj1plh9nfa067ec8jreclqt08hfm2.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyCXjXbo22HglyKtmQWTa_ltf3_E5eBiVx4"
+          "current_key": "AIzaSyACKLIctfIf6mOZfSz3wi4or329zPu12FY"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "779716197153-4c79ldutbq4sqeg37af38hhd98odupbk.apps.googleusercontent.com",
+              "client_id": "451012409384-sjtbj1plh9nfa067ec8jreclqt08hfm2.apps.googleusercontent.com",
               "client_type": 3
             }
           ]

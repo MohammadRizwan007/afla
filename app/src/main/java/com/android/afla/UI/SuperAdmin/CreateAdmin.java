@@ -10,6 +10,7 @@ import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ProgressBar;
 import android.widget.Toast;
 
 import com.android.afla.R;
@@ -28,8 +29,9 @@ public class CreateAdmin extends AppCompatActivity {
     EditText eT_admin_userName;
     EditText eT_admin_password;
     Button btnRegisterAdmin;
+    ProgressBar pb_create_admin;
 
-    String userName;
+    String userEmail;
     String UserPass;
 
     private FirebaseFirestore fStore;
@@ -53,6 +55,7 @@ public class CreateAdmin extends AppCompatActivity {
         eT_admin_userName = findViewById(R.id.eT_admin_userName);
         eT_admin_password = findViewById(R.id.eT_admin_password);
         btnRegisterAdmin = findViewById(R.id.btnRegisterAdmin);
+        pb_create_admin = findViewById(R.id.pb_create_admin);
     }
 
     private void setListener() {
@@ -65,10 +68,10 @@ public class CreateAdmin extends AppCompatActivity {
     }
 
     private void checkFields() {
-        userName = eT_admin_userName.getText().toString();
+        userEmail = eT_admin_userName.getText().toString();
         UserPass = eT_admin_password.getText().toString();
 
-        if (userName.equals("") || UserPass.equals("")) {
+        if (userEmail.equals("") || UserPass.equals("")) {
             Toast.makeText(this, "Fields Cannot Be Left Empty", Toast.LENGTH_SHORT).show();
         } else {
             createUser();
@@ -77,33 +80,47 @@ public class CreateAdmin extends AppCompatActivity {
 
     private void createUser() {
 
-        Map<String, Object> user = new HashMap<>();
-        user.put("Name", userName);
-        user.put("email", UserPass);
-        Task<DocumentReference> documentReference = fStore.collection("users").document("admin").collection(userName).add(user).addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
-            @Override
-            public void onSuccess(DocumentReference documentReference) {
-                Toast.makeText(CreateAdmin.this, "Admin Created Successfully", Toast.LENGTH_SHORT).show();
-            }
-        }).addOnFailureListener(new OnFailureListener() {
-            @Override
-            public void onFailure(@NonNull Exception e) {
-                Toast.makeText(CreateAdmin.this, "Some Error Occurred! Please Try Again Later", Toast.LENGTH_SHORT).show();
-            }
-        });
+        pb_create_admin.setVisibility(View.VISIBLE);
 
-//        documentReference.add(user).addOnSuccessListener(new OnSuccessListener<Void>() {
+        Map<String, Object> user = new HashMap<>();
+        user.put("Email", userEmail);
+        user.put("Password", UserPass);
+        user.put("UserType", "1"); // Admin
+//        Task<DocumentReference> documentReference = fStore.collection("users").document("admin").collection(userName).add(user).addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
 //            @Override
-//            public void onSuccess(Void aVoid) {
+//            public void onSuccess(DocumentReference documentReference) {
 //                Toast.makeText(CreateAdmin.this, "Admin Created Successfully", Toast.LENGTH_SHORT).show();
 //            }
 //        }).addOnFailureListener(new OnFailureListener() {
 //            @Override
 //            public void onFailure(@NonNull Exception e) {
 //                Toast.makeText(CreateAdmin.this, "Some Error Occurred! Please Try Again Later", Toast.LENGTH_SHORT).show();
-////                Log.e(TAG, "onFailure: " + e.toString());
 //            }
 //        });
+
+        DocumentReference documentReference = fStore.collection("admin").document(userEmail.trim().toLowerCase());
+        documentReference.set(user).addOnSuccessListener(new OnSuccessListener<Void>() {
+            @Override
+            public void onSuccess(Void aVoid) {
+                pb_create_admin.setVisibility(View.GONE);
+                clearFields();
+                Toast.makeText(CreateAdmin.this, "Admin Created Successfully", Toast.LENGTH_SHORT).show();
+            }
+        }).addOnFailureListener(new OnFailureListener() {
+            @Override
+            public void onFailure(@NonNull Exception e) {
+                pb_create_admin.setVisibility(View.GONE);
+                clearFields();
+                Toast.makeText(CreateAdmin.this, "Some Error Occurred! Please Try Again Later", Toast.LENGTH_SHORT).show();
+//                Log.e(TAG, "onFailure: " + e.toString());
+            }
+        });
+
+    }
+
+    private void clearFields(){
+        eT_admin_userName.setText("");
+        eT_admin_password.setText("");
 
     }
 }
